@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-5">
+      <h1>MY FIRST JAVASCRIPT ASSIGNMENT</h1>
+        <form>
+            <div class="row">
+              <div class="col-1">
+                <label for="fname" class="form-label">FirstName:</label>
+              </div>
+              <div class="col-6">
+                <input type="text" class="form-control fname" placeholder="First Name" name="Name" id="fname" >
+              </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-1">
+                  <label for="LName" class="form-label">LastName:</label>
+                </div>
+                <div class="col-6">
+                  <input type="text" class="form-control" placeholder="Last Name" name="Name" id="lname">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-1">
+                  <label for="phonenumber" class="form-label">PhoneNo:</label>
+                </div>
+                <div class="col-6">
+                  <input type="number" class="form-control" placeholder="Phone number" name="number" id="phone">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-1">
+                  <label for="Role" class="form-label">Role:</label>
+                </div>
+                <div class="col-6">
+                  <input type="text" class="form-control" placeholder="Role" name="role" id="role">
+                </div>
+              </div>
+              <div class="row mt-2" style="margin-left: 100px;">
+                <div class="col-1">
+                    <button type="button" class="btn btn-success" onclick="add()">Add</button>
+                </div>
+                <div class="col-1">
+                    <button type="button" class="btn btn-primary" onclick="fetch()">Fetch</button>
+                </div>
+                <div class="col-1">
+                    <button type="button" class="btn btn-danger" onclick="remove()">Remove</button>
+                </div>
+              </div>
+          </form>
+              <div class="row mt-2">
+                  <div class="col-6" style="margin-left: 100px;">
+                    <textarea class="form-control" name="text" id="result" placeholder="Result" cols="20" rows="10" id='result'></textarea>
+                  </div>
+              </div>
+    </div>
+    
+
+<script>
+  let staffs = [];
+
+    
+  function add(){
+    let objPerson = {
+      firstName : document.getElementById("fname").value,
+      lastName : document.getElementById("lname").value,
+      phoneNo : document.getElementById("phone").value,
+      role : document.getElementById("role").value,
+      //fullName : function () {
+       //return this.firstName + " " + this.lastName + " " + "with" + " " + this.phoneNo + " " + "and role" + " " + this.role + "is part of Trado Staffs" ;
+      //}
+  }
+    let myArray = Object.values(objPerson);
+    staffs.push(myArray);
+    
+    document.getElementById("result").innerHTML = staffs;
+  }
+
+  function fetch(){
+      // let text = "";
+      for(let i = 0; i < staffs.length; ++i){
+        document.getElementById("result").innerHTML = text;
+      }
+      
+  }
+  // function fetch(){
+  //     let text = "";
+  //     for(let i = 0; i < staffs.length; ++i){
+  //       text += staffs[i] + "  ";
+  //     }
+  //     document.getElementById("result").innerHTML = text;
+  // }
+
+  function remove(){
+    document.getElementById("result").innerHTML = staffs.pop();
+  }
+  
+
+    
+    //const myArray = Object.values(objPerson);
+    //document.getElementById("fname").value = "";
+    //document.getElementById("lname").value = "";
+    //fruits.push(myArray);
+    //document.getElementById("demo").innerHTML = object.values(objPerson);
+    //document.getElementById("demo").innerHTML = fruits;
+
+    
+    //var newArray = document.getElementById("fname").value;
+    //fruits.push(newArray);
+    //document.getElementById("fname").value = "";
+    //document.getElementById("demo").innerHTML = fruits;
+//}
+    //var staffs = []; 
+    //const firstName = document.(".fname").value
+    //console.log(firstName)
+    //var objPerson = 
+    //{
+      //first_name : firstName,
+      //last_name : document.getElementById("lname").value,
+      //phone : document.getElementById("phone").value,
+      //role : document.getElementById("role").value
+    //}
+//function add()
+//{
+   
+    //staffs.push(objPerson);
+    // document.getElementById("age").value = "";
+    //console.log(staffs)
+    // document.getElementById("demo").innerHTML = fruits;
+//}
+
+//function fetch() {
+  //document.getElementById('result').innerHTML = 
+//}
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
